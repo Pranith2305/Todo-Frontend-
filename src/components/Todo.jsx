@@ -1,11 +1,17 @@
 import React from 'react'
 
-function Todo() {
+function Todo({todos}) {
   return (
     <div>
-        <h1>Title</h1>
-        <h2>Description</h2>
-        <button>COMPLETED</button>
+        {todos.map(function(todo) {
+            return <div>
+                <h1>{todo.title}</h1>
+                <h2>{todo.description}</h2>
+                <button>{todo.completed == true ? "COMPLETED" : "Mark to be completed"}</button>
+            </div>
+        })
+
+        }
     </div>
   )
 }
